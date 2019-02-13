@@ -1,0 +1,391 @@
+/* 
+MILAN's
+Web Falcon
+*/
+
+/* GLOBAL STYLES
+============================================ */
+
+:root{
+  --neutral-1: #fffefe;
+  --neutral-2: #27201a;
+  --neutral-3: #4a433e;
+  --red-1: #e8cdd4;
+  --red-2: #c69aa6;
+  --red-3: #a56e7e;
+  --red-4: #894d5e;
+  --red-5: #6c2d3f;
+  --gold-1: #ffeae1;
+  --gold-2: #dcb9ab;
+  --gold-3: #b88d7a;
+  --gold-4: #986a56;
+  --gold-5: #784732;
+  --purple-1: #b29db1;
+  --purple-2: #927291;
+  --purple-3: #7a5178;
+  --purple-4: #653963;
+  --purple-5: #50214e;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+/* WINGS
+============================================ */
+
+.welcome{
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background: var(--red-5);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+.welcome svg{
+  width: 400px;
+  z-index: 100;
+}
+.welcome g{
+  fill: var(--gold-2);
+}
+.circle-anime{
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  border: 1px solid var(--neutral-1);
+  position: absolute;
+  z-index: 1;
+  transform: translateY(50px);
+}
+@media(max-width: 768px){
+  .welcome svg{
+    width: 350px;
+  }
+}
+
+/* HEADER
+============================================ */
+
+header{
+  z-index: 2;
+  font-size: 1rem;
+  height: 80px;
+  width: 100%;
+  background-color: #4a433e75;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  transition: .5s;
+}
+.header-white{
+  background: var(--neutral-1);
+  border-bottom: 1px solid var(--red-5);
+  transition: .5s;
+}
+.header-white ul li a{
+  color: var(--red-5);
+}
+@media(max-width: 768px){
+  .header-white .nav-bar{
+    background: var(--neutral-1);
+    border-bottom: 1px solid var(--red-5);
+    transition: .5s;
+  }
+}
+
+#logo{
+  height: 40px;
+  margin-left: 50px;
+}
+#logo img{
+  height: 100%;
+}
+
+.nav-bar{
+  z-index: 100;
+  display: flex;
+  margin-right: 50px;
+  transition: .5s;
+}
+.nav-bar li a{
+  padding: 10px 20px;
+  margin: 0px 5px;
+  text-decoration: none;
+  color: var(--red-1);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 900;
+  transition: .5s;
+  width: 100px;
+  height: 30px;
+}
+.nav-bar li a:before{
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 2px;
+  background: var(--red-5);
+  margin: 0px 10px;
+  transform: translate(-10px, 22px);
+  transition: .75s;
+}
+.nav-bar li a:hover:before{
+  width: 45px;
+  transition: .25s ease-out;
+}
+.nav-bar li a#instagram{
+  color: var(--purple-1);
+}
+.nav-bar li a.active{
+  color: var(--red-5);
+}
+.nav-bar li a.active:before{
+  content: '';
+  position: absolute;
+  width: 45px;
+  transition: .25s ease-out;
+}
+
+.burger > div{
+  margin: 6px;
+  height: 4px;
+  width: 30px;
+  background-color: var(--red-1);
+  transition: .75s;
+}
+.burger{
+  display: none;
+}
+
+@media(max-width: 1000px){
+  #logo{
+    height: 30px;
+    margin-left: 20px;
+  }
+  .nav-bar{
+    margin-right: 20px;
+  }
+  .nav-bar li a{
+    margin: 0px;
+    padding: 10px 10px;
+  }
+}
+@media(max-width: 768px){
+  header{
+    background: rgba(74, 67, 62, .75);
+  }
+  .nav-bar{
+    padding: 25px 0px;
+    border-top: 1px solid var(--red-1);
+    position: absolute;
+    flex-direction: column;
+    top: 80px;
+    left: 0%;
+    height: 300px;
+    width: 100%;
+    background: rgba(74, 67, 62, .75);
+    align-items: left;
+    justify-content: space-between;
+    transform: translateX(100%);
+    transition: .2s ease-out;
+    z-index: 100;
+  }
+  .nav-active{
+    transform: translateX(0%);
+    z-index: 111;                                                                                          
+  }
+  .nav-bar li{
+    margin: 15px 10px;
+  }
+  .burger{
+    display: block;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+}
+@media(max-width: 300px){
+  .burger{
+    display: none;
+  }
+}
+.toggle > div{
+  animation: burgerX;
+  animation-duration: .5s;
+  animation-timing-function: ease-in-out;
+}
+.toggle .line1{
+  transform: rotate(-45deg) translate(-8px, 6px);
+}
+.toggle .line2{
+  opacity: 0;
+}
+.toggle .line3{
+  transform: rotate(45deg) translate(-8px, -6px);
+}
+@keyframes burgerX{
+  0%{}
+  50%{
+    background: var(--red-5);
+  }
+  100%{
+    background: var(--red-1);
+  }
+}
+
+/* LANDING PAGE
+============================================ */
+
+#home{
+  height: 100vh;
+  background: var(--gold-3);
+}
+
+.fullscreen-video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.fullscreen-video video{
+  min-width: 100%;
+  min-height: 100%;
+}
+.overlay{
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #b88d7a;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+#main-text{
+  position: absolute;
+  z-index: 1;
+  top: 25%;
+  left: 20%;
+}
+#main-text h1{
+  display: block;
+  font-size: 1rem;
+  font-weight: 100;
+  width: 140px;
+  text-align: center;
+  background: var(--red-5);
+  color: var(--neutral-1);
+  padding: 8px 15px;
+}
+#main-text h2{
+  text-transform: uppercase;
+  color: var(--neutral-1);
+  font-size: 7.5rem;
+  font-weight: 900;
+  letter-spacing: .3rem;
+  line-height: 100%;
+}
+
+@keyframes feather{
+  0%{}
+  50%{
+    transform: scale(1.15) translateY(-10px);
+  }
+  100%{}
+}
+.home-button{
+  z-index: 2;
+  position: absolute;
+  bottom: 10%; 
+  left: 49%;
+  animation-name: feather;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+.home-button i{
+  font-size: 4.5rem;
+  color: var(--neutral-1);
+  transition: 2s ease-in-out;
+}
+.home-button i:hover{
+  color: var(--red-5);
+  transition: .5s ease-in-out;
+}
+
+@media(max-width: 1366px){
+  #main-text{
+    left: 10%;
+  }
+  #main-text h2{
+    font-size: 6rem;
+  }
+}
+@media(max-width: 768px){
+  #main-text h2{
+    font-size: 4rem;
+  }
+}
+@media(max-width: 470px){
+  #main-text{
+    left: 5%;
+  }
+  #main-text h1{
+    margin-bottom: 10px;
+  }
+  #main-text h2{
+    font-size: 2.5rem;
+  }
+}
+@media(max-width: 300px){
+  #main-text h2{
+    font-size: 2rem;
+  }
+}
+
+/* SERVICES
+============================================ */
+#services{
+  height: 100vh;
+  background: var(--neutral-1);
+}
+
+/* CONNECT
+============================================ */
+#connect{
+  height: 100vh;
+  background: var(--red-2);
+}
+
+/* FOOTER
+============================================ */
+footer{
+  height: 50vh;
+  background: var(--gold-5);
+}
+
+
+
+
+
+
+
+
+
+
