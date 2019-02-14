@@ -77,6 +77,15 @@ a.button{
   background: var(--red-5);
   margin-bottom: 20px;
 }
+@media(max-width: 500px){
+  .header h1{
+    font-size: 1rem;
+  }
+  .header-line{
+    width: 100px;
+    height: 5px;
+  }
+}
 
 /* WINGS
 ============================================ */
@@ -499,7 +508,11 @@ header{
 .card:hover .card-content{
   transform: rotateY(.5turn);
 }
+
 @media(max-width: 1400px){
+  #services{
+    height: 3300px;
+  }
   .skills-list{
     height: 800px;
     flex-direction: column;
@@ -509,7 +522,26 @@ header{
     width: 100%;
   }
 }
+@media(max-width: 890px){
+  .services-text{
+    font-size: 1.8rem;
+  }
+  #falcon-logo img{
+    width: 250px;
+    margin-bottom: 20px;
+  }
+}
 @media(max-width: 768px){
+  #services{
+    height: 3800px;
+  }
+  .services-text{
+    font-size: 1.5rem;
+  }
+  .paragraph{
+    font-size: 1rem;
+    width: 400px;
+  }
   .skills-list{
     height: 1420px;
   }
@@ -530,6 +562,36 @@ header{
     top: 20px;
     left: 70px;
     opacity: .75;
+  }
+}
+@media(max-width: 560px){
+  #services{
+    height: 3800px;
+  }
+  #falcon-logo img{
+    width: 200px;
+  }
+  .services-text{
+    font-size: 1.2rem;
+  }
+  .paragraph{
+    font-size: 1rem;
+    width: 350px;
+  }
+}
+@media(max-width: 440px){
+  #services{
+    height: 3800px;
+  }
+  #falcon-logo img{
+    width: 200px;
+  }
+  .services-text{
+    font-size: .8rem;
+  }
+  .paragraph{
+    font-size: .8rem;
+    width: 300px;
   }
 }
 
@@ -565,6 +627,11 @@ header{
   background: linear-gradient(var(--red-5), var(--gold-3));
   opacity: .5;
   z-index: -115;
+}
+@media(max-width: 500px){
+  .how-we-do h1{
+    font-size: 1rem;
+  }
 }
 
 /* CONNECT
