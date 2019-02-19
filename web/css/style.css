@@ -40,6 +40,14 @@ body{
   overflow-x: hidden;
 }
 
+.paragraph{
+  font-size: 1.2rem;
+  color: var(--red-2);
+  width: 500px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
 .button{
   padding: 10px 30px;
   text-transform: uppercase;
@@ -415,7 +423,7 @@ header{
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 2700px;
+  height: 2900px;
 }
 
 #falcon-logo img{
@@ -429,14 +437,6 @@ header{
   font-size: 2.3rem;
   text-transform: uppercase;
   margin-bottom: 30px;
-}
-
-.paragraph{
-  font-size: 1.2rem;
-  color: var(--red-2);
-  width: 500px;
-  text-align: center;
-  margin-bottom: 50px;
 }
 
 .skills-list{
@@ -756,6 +756,191 @@ header{
   }
 }
 
+.tech{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+.tech > .paragraph{
+  width: 800px;
+}
+.tech svg{
+  position: absolute;
+  width: 100%;
+}
+.wing-left{
+  fill: var(--red-4);
+  transform: scale(.6) translate(-3000px, 1500px);
+}
+.wing-right{
+  fill: var(--red-4);
+  transform: scale(.6) translate(9000px, 1500px);
+}
+@media(max-width: 1650px){
+  .wing-left{
+    transform: scale(.5) translate(-2000px, 1500px);
+  }
+  .wing-right{
+    transform: scale(.5) translate(11000px, 1500px);
+  }
+}
+@media(max-width: 1450px){
+  .tech > .paragraph{
+    width: 600px;
+    font-size: 1rem;
+  }
+  .wing-left{
+    transform: scale(.4) translate(-1000px, 1500px);
+  }
+  .wing-right{
+    transform: scale(.4) translate(14000px, 1500px);
+  }
+}
+@media(max-width: 1300px){
+  .tech > svg{
+    display: none;
+  }
+}
+.chart{
+  width: 800px;
+  height: 500px;
+}
+.chart-paragraph{
+  border-top: 2px solid var(--red-4);
+  border-bottom: 2px solid var(--red-4);
+  width: 500px;
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--red-5);
+  padding: 5px 0px;
+}
+.chart-line{
+  width: 1px;
+  height: 470px;
+  background: var(--red-4);
+  z-index: 0;
+  position: absolute;
+  opacity: .5;
+}
+.chart-line h2{
+  margin-left: 10px;
+  color: var(--red-4);
+  font-size: 1rem;
+}
+.chart-line-1{
+  transform: translateX(140px);
+}
+.chart-line-2{
+  transform: translateX(460px);
+}
+.chart-line-3{
+  transform: translateX(780px);
+}
+.chart li{
+  margin: 30px 0;
+}
+.chart li h3{
+  color: var(--red-4);
+  margin-bottom: 5px;
+}
+.bar span{
+  height: 2px;
+  float: left;
+  background: var(--red-4);
+  box-shadow: 0 0 4px var(--red-5);
+}
+.chart-2009{
+  width: 2%;
+}
+.chart-2010{
+  width: 6%;
+}
+.chart-2011{
+  width: 12%;
+}
+.chart-2012{
+  width: 20%;
+}
+.chart-2013{
+  width: 32%;
+}
+.chart-2014{
+  width: 54%;
+}
+.chart-2015{
+  width: 70%;
+}
+.chart-2016{
+  width: 86%;
+}
+.chart-2017{
+  width: 96%;
+}
+.chart-2018{
+  width: 100%;
+}
+@media(max-width: 890px){
+  .chart{
+    width: 400px;
+  }
+  .chart-line-1{
+    transform: translateX(70px);
+  }
+  .chart-line-2{
+    transform: translateX(230px);
+  }
+  .chart-line-3{
+    transform: translateX(390px);
+  }
+}
+@media(max-width: 650px){
+  .tech{
+    padding-top: 0px;
+  }
+  .tech > .paragraph{
+    width: 500px;
+    font-size: 1rem;
+  }
+}
+@media(max-width: 560px){
+  .tech > .paragraph{
+    width: 400px;
+    font-size: 1rem;
+  }
+  .chart-paragraph{
+    width: 400px;
+    font-size: 1rem;
+  }
+  .chart{
+    width: 300px;
+  }
+  .chart-line-1{
+    display: none;
+  }
+  .chart-line-2{
+    display: none;
+  }
+  .chart-line-3{
+    transform: translateX(290px);
+  }
+}
+@media(max-width: 420px){
+  .tech > .paragraph{
+    width: 300px;
+    font-size: 1rem;
+  }
+  .chart-paragraph{
+    width: 300px;
+    font-size: 1rem;
+  }
+  .chart{
+    width: 200px;
+  }
+  .chart-line-3{
+    transform: translateX(190px);
+  }
+}
 
 
 
