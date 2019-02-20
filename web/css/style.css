@@ -95,6 +95,13 @@ a.button{
   }
 }
 
+.page{
+  display: none;
+}
+.unhide{
+  display: initial;
+}
+
 /* WINGS
 ============================================ */
 
@@ -108,6 +115,7 @@ a.button{
   align-items: center;
   justify-content: center;
   opacity: 0;
+  overflow: hidden;
 }
 .welcome svg{
   width: 400px;
@@ -242,15 +250,16 @@ header{
 @media(max-width: 768px){
   header{
     background: rgba(74, 67, 62, .75);
+    height: 60px;
   }
   .nav-bar{
-    padding: 25px 0px;
+    padding: 10px 0px;
     border-top: 1px solid var(--red-1);
     position: absolute;
     flex-direction: column;
-    top: 80px;
+    top: 60px;
     left: 0%;
-    height: 300px;
+    height: 260px;
     width: 100%;
     background: rgba(74, 67, 62, .75);
     align-items: left;
@@ -351,7 +360,7 @@ header{
 #main-text h2{
   text-transform: uppercase;
   color: var(--neutral-1);
-  font-size: 7.5rem;
+  font-size: 6.5rem;
   font-weight: 900;
   letter-spacing: .3rem;
   line-height: 100%;
@@ -423,7 +432,7 @@ header{
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 2900px;
+  height: 3000px;
 }
 
 #falcon-logo img{
@@ -479,11 +488,12 @@ header{
 .card-front{
   color: var(--red-5);
   padding-top: 20px;
+  transform: translateZ(80px);
 }
 .card-icon{
   font-size: 8rem;
   position: absolute;
-  color: var(--gold-2);
+  color: var(--red-2);
   top: 140px;
   left: 30px;
   opacity: .75;
@@ -491,7 +501,6 @@ header{
 }
 .card-title{
   font-size: 1.5rem;
-  transform: translateZ(80px);
 }
 .card-back{
   transform: rotateY(.5turn);
@@ -500,11 +509,11 @@ header{
   border-radius: 5px;
 }
 .card-body{
-  transform: translateZ(50px);
   color: var(--red-5);
   font-size: 1rem;
   padding-bottom: 10px;
-  border-bottom: 1px solid var(--red-5)
+  border-bottom: 1px solid var(--red-5);
+  transform: translateZ(80px);
 }
 .card:hover .card-content{
   transform: rotateY(.5turn);
@@ -534,7 +543,7 @@ header{
 }
 @media(max-width: 768px){
   #services{
-    height: 3800px;
+    height: 3500px;
   }
   .services-text{
     font-size: 1.5rem;
@@ -544,30 +553,43 @@ header{
     width: 400px;
   }
   .skills-list{
-    height: 1420px;
+    height: 1075px;
+    padding: 25px;
   }
   .skills-list-sub{
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    height: 700px;
   }
   .card{
     margin-bottom: 20px;
-    height: 200px;
+    height: 150px;
     width: 300px;
   }
+  .card-front{
+    padding-top: 5px;
+    border: 5px solid var(--red-3);
+    transform: translateZ(40px);
+  }
+  .card-title{
+    font-size: 1.2rem;
+    margin: 5px 0px;
+  }
   .card-content{
-    padding: 100px 150px;
+    padding: 75px 150px;
   }
   .card-icon{
-    font-size: 10rem;
-    top: 20px;
-    left: 70px;
+    font-size: 6rem;
     opacity: .75;
+    position: initial;
+    transform: rotate(0deg);
+    color: var(--red-2);
   }
 }
 @media(max-width: 560px){
   #services{
-    height: 3800px;
+    height: 3400px;
   }
   #falcon-logo img{
     width: 200px;
@@ -582,7 +604,7 @@ header{
 }
 @media(max-width: 440px){
   #services{
-    height: 3800px;
+    height: 3300px;
   }
   #falcon-logo img{
     width: 200px;
@@ -602,7 +624,7 @@ header{
   margin-top: 100px;
   margin-bottom: 50px;
   padding-top: 50px;
-  min-height: 800px;
+  min-height: 900px;
   width: 100%;
   background-image: url('../img/laptop.jpg');
   position: relative;
@@ -623,6 +645,7 @@ header{
 }
 .how-we-do .header div{
   background: var(--purple-4);
+  margin-bottom: 40px;
 }
 .overlay-laptop{
   position: absolute;
@@ -651,7 +674,7 @@ header{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 60px;
   background: #50214e70;
   height: 500px;
   width: 860px;
@@ -711,6 +734,14 @@ header{
   .step-icon i{
     font-size: 2.5rem;
   }
+  .step h6{
+    font-family: sans-serif;
+    font-size: 6rem;
+    position: absolute;
+    transform: translate(100px, -10px);
+    color: var(--red-4);
+    z-index: -1;
+  }
 }
 @media(max-width: 560px){
   .how-we-do p{
@@ -749,6 +780,7 @@ header{
 @media(max-width: 440px){
   .how-we-do p{
     width: 95%;
+    font-size: 1rem;
   }
   .four-steps{
     width: 95%;
@@ -904,16 +936,28 @@ header{
   }
 }
 @media(max-width: 560px){
+  .tech{
+    height: 600px;
+    justify-content: space-between;
+  }
+  .tech > .header{
+    margin-bottom: 70px;
+  }
   .tech > .paragraph{
-    width: 400px;
+    height: 250px;
+    width: 380px;
     font-size: 1rem;
   }
   .chart-paragraph{
-    width: 400px;
+    width: 90%;
     font-size: 1rem;
+  }
+  .chart li{
+    margin: 15px 0px;
   }
   .chart{
     width: 300px;
+    margin-bottom: 30px;
   }
   .chart-line-1{
     display: none;
@@ -923,6 +967,7 @@ header{
   }
   .chart-line-3{
     transform: translateX(290px);
+    height: 310px;
   }
 }
 @media(max-width: 420px){
@@ -941,10 +986,6 @@ header{
     transform: translateX(190px);
   }
 }
-
-
-
-
 
 /* CONNECT
 ============================================ */

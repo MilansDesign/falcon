@@ -6,6 +6,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Window Height
     var windowHeight = $(window).height();
 
+// Hide Window
+
+    $(window).ready(function(){
+        var page = $('.page');
+        setTimeout(function() {
+            page.addClass('unhide');
+        }, 2800);
+    });
+
 // Smooth Scrolling
 
     var scrollLink = $('.scroll');
