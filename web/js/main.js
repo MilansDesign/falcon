@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Window Height
     var windowHeight = $(window).height();
 
+
+
 // Hide Window
 
     $(window).ready(function(){
@@ -14,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
             page.addClass('unhide');
         }, 2800);
     });
+
+
 
 // Smooth Scrolling
 
@@ -25,6 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollTop: $(this.hash).offset().top
         }, 750)
     })
+
+
 
 // Navigation Color Change
 
@@ -39,6 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
     });
+
+
 
 // Active Link Switch
 
@@ -56,6 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     })
 
+
+
 // Burger Menu
 
     const navSlide = ()=>{
@@ -69,6 +79,22 @@ document.addEventListener('DOMContentLoaded', function() {
     } 
     navSlide();
 
-}, false);
 
-    
+
+// Parallax
+
+    $(window).scroll(function() {
+        parallax();
+    })
+
+    function parallax() {
+
+        var wScroll = $(window).scrollTop();
+        console.log(wScroll)
+
+        $('.parallax-bg').css('background-position', 'center '+(wScroll*0.6)+'px');
+        $('.parallax-content').css('top', 10+(wScroll*0.06)+'%');
+
+    }
+
+}, false);
