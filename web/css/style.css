@@ -457,7 +457,7 @@ header #logo svg g{
 .reveal span{
   opacity: 0;
   animation: appearText 0.0001s linear forwards;
-  animation-delay: .5s;
+  animation-delay: .7s;
 }
 @keyframes revealBlock{
   0%{
@@ -482,7 +482,7 @@ header #logo svg g{
   height: 100%;
   background: var(--neutral-1);
   animation: revealBlock .75s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-  animation-delay: .2s;
+  animation-delay: .4s;
 }
 
 @keyframes headerLineY{
