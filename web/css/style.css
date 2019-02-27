@@ -337,7 +337,6 @@ header #logo svg g{
 }
 .parallax-bg{
   background: url("../img/background.jpg") no-repeat;
-  background-position: center;
   background-size: cover;
   position: relative;
   overflow: hidden;
@@ -503,6 +502,7 @@ header #logo svg g{
   position: absolute;
   top: 150px;
   left: 200px;
+  opacity: 0;
 }
 .milan-image{
   width: 450px;
@@ -516,11 +516,13 @@ header #logo svg g{
   font-size: 1.5rem;
   letter-spacing: 3px;
   padding-bottom: 3px;
+  opacity: 0;
   border-bottom: 1px solid var(--neutral-1);
   text-shadow: 0px 0px 25px var(--neutral-1);
 }
 .about-box{
   width: 300px;
+  opacity: 0;
 }
 .about-box::before{
   content: '';
@@ -566,6 +568,41 @@ header #logo svg g{
   position: absolute;
   right: 300px;
   top: 650px;
+}
+.milan-anim{
+  animation: unravel 1s ease-in forwards;
+}
+.milan-text-anim{
+  opacity: 0;
+  animation: appearText 0.0001s linear forwards;
+  animation-delay: .75s;
+}
+.milan-text-anim::after{
+  content: '';
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: var(--neutral-1);
+  animation: revealBlock 1.25s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: .4s;
+}
+.about-box-anim{
+  opacity: 0;
+  animation: appearText 0.0001s linear forwards;
+  animation-delay: .8s;
+}
+.about-box-anim::after{
+  content: '';
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: var(--neutral-1);
+  animation: revealBlock 1.25s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: .5s;
 }
 
 /* SERVICES
@@ -1024,6 +1061,10 @@ footer ul li a:hover{
   .about-box-3{
     position: initial;
     margin-top: 50px;
+    opacity: initial;
+  }
+  .about-box-1{
+    margin-top: 80px;
   }
   #about{
     display: flex;

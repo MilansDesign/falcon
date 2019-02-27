@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Window Height
     var windowHeight = $(window).height();
 
-
+    // Window Scroll
+    var scroll = $(window).scrollTop();
 
 // Hide Window
 
@@ -31,22 +32,35 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 
 
-
-// Navigation Color Change
-
     $(window).scroll(function() {
 
-        var scroll = $(window).scrollTop();
+        var width = $(window).width();
+        var height = $(window).height();
+        var scrolled = $(window).scrollTop();
 
-        if (scroll > windowHeight - 80) {
+        if (scrolled > height - 80 ) {
             $("header").addClass("header-white");
         } else {
             $("header").removeClass("header-white");
         }
 
+        if (width >= 768){
+            if (scrolled > height - 300 && scrolled < height + 500) {
+                $(".milan").addClass("milan-anim");
+                $(".milan-text").addClass("milan-text-anim");
+                $(".about-box-1").addClass("about-box-anim");
+                $(".about-box-2").addClass("about-box-anim");
+                $(".about-box-3").addClass("about-box-anim");
+            }else if (scrolled < height / 5 || scrolled > height * 1.75){
+                $(".milan").removeClass("milan-anim");
+                $(".milan-text").removeClass("milan-text-anim");
+                $(".about-box-1").removeClass("about-box-anim");
+                $(".about-box-2").removeClass("about-box-anim");
+                $(".about-box-3").removeClass("about-box-anim");
+            } 
+        }
+
     });
-
-
 
 // Active Link Switch
 
@@ -82,7 +96,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Parallax
-
     
     if (windowWidth >= 768) {
         $(window).scroll(function() {
@@ -92,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
         function parallax() {
     
             var wScroll = $(window).scrollTop();
-    
             $('.parallax-bg').css('background-position', 'center '+(wScroll*0.6)+'px');
             $('.parallax-content').css('top', 10+(wScroll*0.06)+'%');
     
