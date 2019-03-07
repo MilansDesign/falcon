@@ -3,11 +3,30 @@
 * Dev Hawk
 */
 
+@import "flower.css";
+
+/* ANIMATIONS
+==================================== */
+
+@keyframes Pulse{
+  0%{
+    opacity: 0;
+  }
+  70%{
+    opacity: 1;
+    background: rgba(165, 33, 33, 0.3)
+  }
+  100%{
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
 
 /* GLOBAL
 ==================================== */
 
-@import "flower.css";
 
 :root{
     
@@ -17,10 +36,15 @@
     --red-3: #a52121; /* 165-33-33 */
     --red-4: #5d0404; /* 93-4-4 */
     --red-5: #2d0000; /* 45-0-0 */
+    --grey-1: #f4f4f4; /* 244-244-244 */
+    --grey-2: #c1c1c1; /* 193-193-193 */
+    --grey-3: #969696; /* 150-150-150 */
+    --grey-4: #686868; /* 104-104-104 */
+    --grey-5: #2e2e2e; /* 46-46-46 */
 
     /* Fonts */
-    --serif: ;
-    --sans: ;
+    --serif: 'Cinzel', serif;
+    --sans: 'Ubuntu', sans-serif;
 }
 
 *{
@@ -31,29 +55,109 @@
     scroll-behavior: smooth;
 }
 body{
-  font-family: var(--sans);
   font-size: 62.5%;
   overflow-x: hidden;
+  font-family: var(--sans);
 }
 
 ::selection {
-  background: var(--gold-1);
-  color: var(--purple-5);
+  background: var(--red-1);
+  color: #000;
 }
 ::-moz-selection {
-  background: var(--neutral-1);
-  color: var(--purple-5);
+  background: var(--red-1);
+  color: black;
 }
 
 
 /* GLOBAL
 ==================================== */
 
+#logo{
+  position: absolute;
+  left: 50px;
+  top: 50px;
+}
+#logo img{
+  height: 75px;
+}
+
 #particles-js{
     height: 100vh;
     background: #000;
 }
+#particles-js nav{
+  position: absolute;
+  top: 75px;
+  right: 50px;
+  position: fixed;
+}
+#particles-js nav ul{
+  display: flex;
+}
+#particles-js nav ul li{
+  padding: 0px 35px;
+}
+#particles-js nav ul li a{
+  color: var(--grey-1);
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: .5s;
+}
+#particles-js nav ul li a:hover{
+  color: var(--red-1);
+  transition: .5s;
+}
 
+#heading{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  text-align: center;
+  z-index: 500;
+}
+#heading h1{
+  text-shadow: 0px 0px 50px #000;
+  font-size: 2.5rem;
+  color: var(--grey-2);
+  margin-bottom: 10px;
+}
+#heading h2{
+  text-shadow: 0px 0px 50px #000;
+  font-size: 4rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--grey-1);
+}
+
+.home-text{
+  position: absolute;
+  bottom: 50px;
+  color: var(--grey-2);
+  font-size: 2rem;
+}
+.home-text-left{
+  left: 50px;
+  text-align: left;
+}
+.home-text-right{
+  right: 50px;
+  text-align: right;
+}
+
+.pulse{
+  width: 0px;
+  height: 0px;
+  border: 3px solid var(--red-3);
+  border-radius: 50%;
+  animation: Pulse 6s infinite ease-out;
+  animation-delay: 1s;
+  position: absolute;
+  left: 50%;
+  top: -10%;
+  transform: translate(-50%, -50%);
+}
 
 /* ABOUT
 ==================================== */
@@ -63,11 +167,64 @@ body{
     background: #1a1a1a;
 }
 
-
 /* CONTACT
 ==================================== */
 
 #contact{
     height: 100vh;
     background: #a5a5a5;
+}
+
+/* MEDIA QUERIES
+==================================== */
+
+@media(max-width: 1366px){
+  #logo{
+    top: 25px;
+    left: 25px;
+  }
+  #particles-js nav{
+    top: 50px;
+    right: 25px;
+  }
+  #heading h1{
+    font-size: 2rem;
+  }
+  #heading h2{
+    font-size: 3rem;
+  }
+  .home-text{
+    font-size: 1.5rem;
+    bottom: 25px;
+  }
+  .home-text-left{
+    left: 25px;
+  }
+  .home-text-right{
+    right: 25px;
+  }
+}
+@media(max-width: 768px){
+  #particles-js nav{
+    display: none;
+  }
+  #heading h1{
+    font-size: 1.5rem;
+  }
+  #heading h2{
+    font-size: 2rem;
+  }
+  .home-text{
+    font-size: 1.5rem;
+    bottom: 25px;
+  }
+  .home-text-left{
+    display: none;
+  }
+  .home-text-right{
+    right: 25px;
+  }
+  .pulse{
+    display: none;
+  }
 }

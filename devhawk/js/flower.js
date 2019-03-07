@@ -1,7 +1,7 @@
 console.clear();
 
 var screen_width = window.innerWidth;
-if(screen_width >= 768) {
+if(screen_width > 768) {
 
     var doc = document;
     var flower = doc.querySelector('.flower');
