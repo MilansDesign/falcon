@@ -8,6 +8,28 @@
 /* ANIMATIONS
 ==================================== */
 
+@keyframes appear{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes revealBlock{
+  0%{
+    left: 0;
+    width: 0%
+  }
+  25%{
+    left: 0;
+    width: 100%;
+  }
+  100%{
+    left: 100%;
+    width: 0%;
+  }
+}
 @keyframes Pulse{
   0%{
     opacity: 0;
@@ -22,7 +44,6 @@
     opacity: 0;
   }
 }
-
 
 /* GLOBAL
 ==================================== */
@@ -53,6 +74,7 @@
     padding: 0;
     list-style-type: none;
     scroll-behavior: smooth;
+    
 }
 body{
   font-size: 62.5%;
@@ -70,13 +92,15 @@ body{
 }
 
 
-/* GLOBAL
+/* HOME
 ==================================== */
 
 #logo{
   position: absolute;
   left: 50px;
   top: 50px;
+  opacity: 0;
+  animation: appear 1s linear forwards 1.25s;
 }
 #logo img{
   height: 75px;
@@ -85,12 +109,15 @@ body{
 #particles-js{
     height: 100vh;
     background: #000;
+    cursor: url('../img/cursor.svg');
 }
 #particles-js nav{
   position: absolute;
   top: 75px;
   right: 50px;
   position: fixed;
+  opacity: 0;
+  animation: appear 1s linear forwards 1.25s;
 }
 #particles-js nav ul{
   display: flex;
@@ -121,7 +148,7 @@ body{
   text-shadow: 0px 0px 50px #000;
   font-size: 2.5rem;
   color: var(--grey-2);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 #heading h2{
   text-shadow: 0px 0px 50px #000;
@@ -130,12 +157,30 @@ body{
   text-transform: uppercase;
   color: var(--grey-1);
 }
+.reveal span{
+  opacity: 0;
+  animation: appear 0.0001s linear forwards;
+  animation-delay: .7s;
+}
+.reveal::after{
+  content: '';
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: var(--red-4);
+  animation: revealBlock 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: .4s;
+}
 
 .home-text{
   position: absolute;
   bottom: 50px;
   color: var(--grey-2);
   font-size: 2rem;
+  opacity: 0;
+  animation: appear 1s linear forwards 1.25s;
 }
 .home-text-left{
   left: 50px;
@@ -159,6 +204,7 @@ body{
   transform: translate(-50%, -50%);
 }
 
+
 /* ABOUT
 ==================================== */
 
@@ -167,6 +213,7 @@ body{
     background: #1a1a1a;
 }
 
+
 /* CONTACT
 ==================================== */
 
@@ -174,6 +221,7 @@ body{
     height: 100vh;
     background: #a5a5a5;
 }
+
 
 /* MEDIA QUERIES
 ==================================== */

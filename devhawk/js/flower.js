@@ -96,6 +96,5 @@ if(screen_width > 768) {
     
     function out ( content ) {
         console.log( content );
-    } 
-    
+    }
 }
