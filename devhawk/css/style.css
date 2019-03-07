@@ -160,7 +160,7 @@ body{
 .reveal span{
   opacity: 0;
   animation: appear 0.0001s linear forwards;
-  animation-delay: .7s;
+  animation-delay: 1.3s;
 }
 .reveal::after{
   content: '';
@@ -171,7 +171,7 @@ body{
   height: 100%;
   background: var(--red-4);
   animation: revealBlock 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-  animation-delay: .4s;
+  animation-delay: 1s;
 }
 
 .home-text{
@@ -256,11 +256,14 @@ body{
   #particles-js nav{
     display: none;
   }
+  #heading{
+    width: 90%;
+  }
   #heading h1{
     font-size: 1.5rem;
   }
   #heading h2{
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   .home-text{
     font-size: 1.5rem;
