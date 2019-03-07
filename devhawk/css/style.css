@@ -1,0 +1,50 @@
+/* GLOBAL =============================
+==================================== */
+
+@import "flower.css";
+
+:root{
+    
+    /* Pallete */
+    --red-1: #ff6565; /* 255-101-101 */
+    --red-2: #d93f3f; /* 217-63-63 */
+    --red-3: #a52121; /* 165-33-33 */
+    --red-4: #5d0404; /* 93-4-4 */
+    --red-5: #2d0000; /* 45-0-0 */
+
+    /* Fonts */
+    --serif: ;
+    --sans: ;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+body{
+  font-family: var(--sans);
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--gold-1);
+  color: var(--purple-5);
+}
+::-moz-selection {
+  background: var(--neutral-1);
+  color: var(--purple-5);
+}
+
+#home{
+    background: #000;
+    height: 100vh;
+}
+#about{
+    height: 100vh;
+}
+#contact{
+    height: 100vh;
+}
