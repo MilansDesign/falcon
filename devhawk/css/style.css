@@ -1,4 +1,10 @@
-/* GLOBAL =============================
+/*
+* MILAN's 
+* Dev Hawk
+*/
+
+
+/* GLOBAL
 ==================================== */
 
 @import "flower.css";
@@ -22,6 +28,7 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
+    scroll-behavior: smooth;
 }
 body{
   font-family: var(--sans);
@@ -38,13 +45,29 @@ body{
   color: var(--purple-5);
 }
 
-#home{
-    background: #000;
+
+/* GLOBAL
+==================================== */
+
+#particles-js{
     height: 100vh;
+    background: #000;
 }
+
+
+/* ABOUT
+==================================== */
+
 #about{
     height: 100vh;
+    background: #1a1a1a;
 }
+
+
+/* CONTACT
+==================================== */
+
 #contact{
     height: 100vh;
+    background: #a5a5a5;
 }

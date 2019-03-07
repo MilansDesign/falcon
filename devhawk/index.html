@@ -13,6 +13,7 @@
     <!-- Font Awesome -->
     <!-- Google Fonts -->
     <!-- Scripts -->
+
     <!-- Links -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -21,9 +22,9 @@
 
     <!--     HOME
     =======================-->
-    <section id="home">
+    <section id="particles-js">
         <div class="wrapper">
-            <div class="flower"></div>
+            <a href="#about"><div class="flower"></div></a>
         </div>
     </section>
 
@@ -49,7 +50,20 @@
     =======================-->
     <section id="contact"></section>
 
+    <!--     SCRIPTS
+    =======================-->
+
+    <!-- Flower -->
     <script src="js/flower.js"></script>
+
+    <!-- Particles -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS.load('particles-js',
+        'particles.json', function(){
+            console.log('particles.json loaded...');
+        });
+    </script>
 
 </body>
 </html>
