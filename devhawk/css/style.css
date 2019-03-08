@@ -454,10 +454,6 @@ body{
   .text-box-2{
     top: 35%;
   }
-  #playlist{
-    top: 15%;
-    right: 5%;
-  }
 }
 @media(max-width: 768px){
   #particles-js nav{
@@ -487,39 +483,75 @@ body{
   }
 
   #about{
-    height: 1150px;
+    height: 800px;
   }
   .text-box-1{
-    top: 5%;
+    top: 10%;
+    left: 15%;
   }
   .text-box-2{
-    top: 18%;
+    top: 30%;
+    left: 15%;
   }
   .links{
-    top: 33%;
+    top: 50%;
+    left: 15%;
   }
   #playlist{
-    top: 58%;
+    display: none;
   }
-  #playlist,
-  .links,
-  .text-box{
-    left: 30%;
+}@media(max-width: 768px){
+  #particles-js nav{
+    display: none;
   }
-}
-@media(max-width: 550px){
-  #playlist,
-  .links,
-  .text-box{
-    width: 70%;
+  #heading{
+    width: 90%;
+  }
+  #heading h1{
+    font-size: 1.5rem;
+  }
+  #heading h2{
+    font-size: 2.5rem;
+  }
+  .home-text{
+    font-size: 1.5rem;
+    bottom: 25px;
+  }
+  .home-text-left{
+    display: none;
+  }
+  .home-text-right{
+    right: 25px;
+  }
+  .pulse{
+    display: none;
+  }
+
+  #about{
+    height: 800px;
+  }
+  .text-box-1{
+    top: 10%;
     left: 15%;
+  }
+  .text-box-2{
+    top: 35%;
+    left: 15%;
+  }
+  .links{
+    top: 60%;
+    left: 15%;
+  }
+  #playlist{
+    display: none;
   }
 }
 @media(max-width: 420px){
-  #playlist{
-    left: 5%
+  .text-box{
+    width: 250px;
   }
-  #playlist h3{
-    transform: translateX(35px)
+  .text-box,
+  .links{
+    left: 10%;
   }
 }
