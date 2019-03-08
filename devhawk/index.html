@@ -78,7 +78,7 @@
         </div>
 
         <div id="playlist">
-            <h3 class="heading">&emsp;Some music</h3>
+            <h3 class="heading">&emsp;March playlist</h3>
             <iframe src="https://open.spotify.com/embed/user/u67zc3n0ef35ro4jg5syz4gy2/playlist/6k9gephWge9ZVxfShwUS3S" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
         
@@ -126,11 +126,85 @@
 
     <!--     CONTACT
     =======================-->
-    <section id="contact"></section>
+    <section id="contact">
+
+        <div id="contact-form">
+            <form action="" method="POST">
+                <div id="dropdown">
+                    <select name="dropdown">
+                        <option value="sendmail">Talk about a project</option>
+                        <option value="sendmail">Say Hi!</option>
+                    </select>
+                </div>
+                    
+                <div class="element-1">
+                    <input type="text" name="name" required="" spellcheck="false" autocomplete="off">
+                    <label>Name</label>
+                    <div class="input-line"></div>
+                </div>
+            
+                <div class="element-2">
+                    <input type="text" name="email" required="" spellcheck="false" autocomplete="off">
+                    <label>Email address</label>
+                    <div class="input-line"></div>
+                </div>
+
+                <div class="element-3">
+                    <input type="text" name="company" required="" spellcheck="false" autocomplete="off">
+                    <label>Company / Organisation</label>
+                    <div class="input-line"></div>
+                </div>
+
+                <div class="element-4">
+                    <h3 id="value-budget">fff</h3>
+                    <label for="">Budget</label>
+                    <input type="range" min="200" max="5000" value="1000" id="slider-budget" class="slider">
+                </div>
+
+                <div class="element-5">
+                    <h3 id="value-deadline">44</h3>
+                    <label for="">Deadline</label>
+                    <input type="range" min="1" max="12" value="5" id="slider-deadline" class="slider">
+                </div>
+
+                <div class="element-6">
+                    <textarea type="text" name="message" required="" spellcheck="false" autocomplete="off"></textarea>
+                    <label>Some details</label>
+                    <div class="input-line"></div>
+                </div>
+
+                
+
+                <button type="submit" name="submit">send</button>
+            </form>
+        </div>
+
+    </section>
 
 
     <!--     SCRIPTS
     =======================-->
+    
+    <script>
+    var slider1=document.getElementById("slider-budget");
+    var val1=document.getElementById("value-budget");
+    val1.innerHTML="$" + slider1.value;
+    slider1.oninput=function(){
+        val1.innerHTML="$" + this.value;
+    }
+    var slider2=document.getElementById("slider-deadline");
+    var val2=document.getElementById("value-deadline");
+    val2.innerHTML=slider2.value + " months";
+    slider2.oninput=function(){
+        val2.innerHTML=this.value + " months";
+        if(this.value == 12){
+            val2.innerHTML="Not sure";
+        }
+        if(this.value == 1){
+            val2.innerHTML=this.value + " month";
+        }
+    }
+    </script>
 
     <!-- Flower -->
     <script src="js/flower.js"></script>

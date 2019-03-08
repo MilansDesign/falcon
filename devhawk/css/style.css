@@ -58,6 +58,14 @@
     opacity: 0;
   }
 }
+@keyframes lineAnimate{
+  0%{
+      width: 0%;
+  }
+  100%{
+      width: 100%;
+  }
+}
 
 /* GLOBAL
 ==================================== */
@@ -350,17 +358,6 @@ body{
   color: var(--red-3);
 }
 
-
-
-
-
-
-
-
-
-
-
-
 #playlist{
   position: absolute; 
   top: 20%;
@@ -374,25 +371,248 @@ body{
 ==================================== */
 
 #contact{
-    height: 100vh;
-    background: #a5a5a5;
+    height: 110vh;
+    background: var(--grey-2);
+    position: relative;
 }
-
+#contact-form{
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#contact-form form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#dropdown select{
+  padding: 0px 15px;
+  background: var(--grey-2);
+  border: 2px solid var(--red-3);
+  color: var(--red-4);
+  font-size: 1.25rem;
+  width: 260px;
+  height: 50px;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+#contact-form  input{
+  padding: 10px 10px;
+  margin-bottom: 50px;
+  color: var(--red-4);
+}
+#contact-form  textarea{
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 50px;
+  color: var(--red-4);
+}
+#contact-form  input,
+#contact-form  textarea{
+  box-sizing: border-box;
+  box-shadow: none;
+  border: none;
+  background: none;
+  resize: none;
+  outline: none;
+  border-bottom: 1px solid var(--red-3);
+  width: 600px;
+  font-size: 1.25rem;
+}
+#contact-form  button{
+  border: 2px solid var(--red-3);
+  border-radius: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  color: var(--red-4);
+  margin-top: 40px;
+  width: 125px;
+  height: 50px;
+  background:-webkit-linear-gradient(0deg,transparent 50%,var(--grey-1) 50%);
+  background-size: 400px 80px;
+  transition: .75s ease-in-out;
+}
+#contact-form  button:hover{
+  background-position: 150px 0;
+  transition: .5s ease-in-out;
+}
+#contact-form  form div{
+  position: relative;
+}
+#contact-form  form div label{
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: 1.2rem;
+  color: var(--red-3);
+  transition: .4s;
+  pointer-events: none;
+}
+#contact-form  .textarea-class::after{
+  bottom: 42px;
+}
+#contact-form input:focus ~ label,
+#contact-form textarea:focus ~ label,
+#contact-form input:valid ~ label,
+#contact-form textarea:valid ~ label{
+  top: -20px;
+  left: 0;
+  color: var(--grey-1);
+  font-size: 1rem;
+}
+#contact-form input:focus ~ .input-line,
+#contact-form textarea:focus ~ .input-line,
+#contact-form input:valid ~ .input-line,
+#contact-form textarea:valid ~ .input-line{
+  position: absolute;
+  height: 2px;
+  width: 0%;
+  background: var(--grey-1);
+  bottom: 49px;
+  left: 0;
+  animation: lineAnimate .25s forwards ease-in;
+}
+#contact-form textarea:focus ~ .input-line,
+#contact-form textarea:valid ~ .input-line{
+  bottom: 52px;
+}
+#contact-form input[type="range"] {
+  width: 600px;
+  height: 28px;
+  -webkit-appearance: none;
+  outline: none;
+  border: 0;
+  padding: 0 8px;
+  margin: 50px 0;
+  border-bottom: none;
+}
+.element-4 h3,
+.element-5 h3{
+  color: var(--red-3);
+  font-size: 1rem;
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+/*chrome and opera*/
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--red-3);
+  height: 2px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+input[type="range"]:hover::-webkit-slider-runnable-track,
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: var(--grey-1);
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: var(--grey-1); /*thumbColor*/
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-top: -10px;
+  cursor: pointer;
+  border: 2px solid var(--red-3);
+  transition: 0.3s;
+}
+input[type="range"]:hover::-webkit-slider-thumb,
+input[type="range"]:focus::-webkit-slider-thumb {
+  border: 2px solid var(--grey-1);
+}
+/*firefox*/
+input[type="range"]::-moz-focus-outer {
+  border: 0;
+}
+input[type="range"]::-moz-range-track {
+  background: var(--grey-1);
+  height: 2px;
+  border-radius: 4px;
+}
+input[type="range"]:hover::-moz-range-track,
+input[type="range"]:focus::-moz-range-track {
+  background: var(--grey-1);
+}
+input[type="range"]::-moz-range-thumb {
+  background: var(--grey-1);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+input[type="range"]::-moz-range-progress {
+  background: var(--grey-1);
+  border-radius: 4px;
+  height: 2px;
+}
+input[type="range"]:hover::-moz-range-progress,
+input[type="range"]:focus::-moz-range-progress {
+  background: var(--grey-1);
+}
+/*edge and IE*/
+input[type="range"]::-ms-track {
+  background: var(--grey-1);
+  height: 4px;
+  border-radius: 4px;
+  border: none;
+  color: transparent;
+}
+input[type="range"]:hover::-ms-track,
+input[type="range"]:focus::-ms-track {
+  background: var(--grey-1);
+}
+input[type="range"]::-ms-thumb {
+  background: var(--red-3);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  margin: 0 4px 0;
+  box-shadow: 0 0 0 4px var(--grey-1);
+}
+input[type="range"]:hover::-ms-thumb,
+input[type="range"]:focus::-ms-thumb {
+  background: var(--grey-1);
+}
+input[type="range"]::-ms-tooltip {
+  display: none;
+}
+input[type="range"]::-ms-fill-lower {
+  background: var(--red-3);
+  border-radius: 4px;
+}
+input[type="range"]:hover::-ms-fill-lower,
+input[type="range"]:focus::-ms-fill-lower {
+  background: var(--grey-1);
+}
 
 /* MEDIA QUERIES
 ==================================== */
 @media(max-width: 1550px){
+  
   .text-box-1{
     left: 5%;
   }
   .links{
     left: 5%;
+    top: 30%;
   }
   #playlist{
     right: 5%;
   }
+  #reading-list{
+    top: 30%;
+  }
 }
 @media(max-width: 1366px){
+  #about{
+    height: 800px;
+  }
   #logo{
     top: 25px;
     left: 25px;
@@ -435,9 +655,6 @@ body{
   }
 }
 @media(max-width: 1166px){
-  #about{
-    height: 900px;
-  }
   #reading-list{
     display: none;
   }
@@ -445,11 +662,11 @@ body{
     left: 10%;
   }
   .links{
-    top: 55%;
-    left: 15%;
+    top: 60%;
+    left: 10%;
   }
   .text-box-1{
-    top: 15%;
+    top: 10%;
   }
   .text-box-2{
     top: 35%;
