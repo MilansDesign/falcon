@@ -44,6 +44,20 @@
     opacity: 0;
   }
 }
+@keyframes buttonPulse{
+  0%{
+    opacity: 0;
+  }
+  70%{
+    opacity: 1;
+    background: rgba(165, 33, 33, 0.3)
+  }
+  100%{
+    width: 90px;
+    height: 90px;
+    opacity: 0;
+  }
+}
 
 /* GLOBAL
 ==================================== */
@@ -117,6 +131,7 @@ body{
   right: 50px;
   position: fixed;
   opacity: 0;
+  z-index: 1000;
   animation: appear 1s linear forwards 1.25s;
 }
 #particles-js nav ul{
@@ -130,10 +145,33 @@ body{
   text-decoration: none;
   font-size: 1.3rem;
   transition: .5s;
+  background: rgba(0, 0, 0, 0.43);
+  border-radius: 15px;
+  height: 45px;
+  width: 100px;
+  display: block;
+  text-align: center;
+  line-height: 45px;
+  position: relative;
 }
 #particles-js nav ul li a:hover{
   color: var(--red-1);
   transition: .5s;
+}
+#particles-js nav ul li a::after{
+  content: '';
+  width: 0px;
+  height: 0px;
+  border: 3px solid var(--red-3);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+#particles-js nav ul li a:hover::after{
+  animation: buttonPulse .35s ease-out;
 }
 
 #heading{
@@ -209,10 +247,128 @@ body{
 ==================================== */
 
 #about{
-    height: 100vh;
-    background: #1a1a1a;
+    height: 1100px;
+    background: #151515;
+    position: relative;
 }
 
+.heading{
+  color: var(--grey-2);
+  font-size: 1.5rem;
+  line-height: 2.3rem;
+}
+.heading::before,
+.heading::after{
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 40px;
+  top: 15px;
+  background: var(--grey-2);
+  transform: rotate(-45deg);
+}
+.heading::before{
+  left: -30px;
+}
+.heading::after{
+  left: -15px;
+}
+.text-box{
+  position: absolute;
+  top: 10%;
+  text-align: left;
+  width: 400px;
+}
+.text-box-1{
+  left: 10%;
+}
+.text-box-2{
+  left: 40%;
+}
+.text-box p{
+  margin-top: 10px;
+  color: var(--grey-3);
+  font-size: 1.25rem;
+  font-weight: ligher;
+}
+
+.links{
+  position: absolute;
+  left: 10%;
+  top: 40%;
+}
+.links h3{
+  margin-bottom: 15px;
+}
+.links a{
+  text-decoration: none;
+  color: var(--grey-4);
+  line-height: 2rem;
+  font-size: 1.1rem;
+  position: relative;
+  transition: .5s;
+}
+.links a::before{
+  height: 5px;
+  width: 5px;
+  content: '';
+  background: var(--grey-4);
+  position: absolute;
+  top: 45%;
+  left: -15px;
+  border-radius: 50%;
+}
+.links a:hover{
+  transition: .75s;
+  color: var(--red-3);
+}
+
+#reading-list{
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+#reading-list ul{
+  margin: 40px 0;
+}
+#reading-list ul li{
+  margin: 25px 0;
+}
+#reading-list a{
+  text-decoration: none;
+  color: var(--grey-4);
+  font-size: 1.3rem;
+  transition: .5s;
+}
+#reading-list h4{
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--grey-3);
+}
+#reading-list a:hover{
+  transition: .75s;
+  color: var(--red-3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#playlist{
+  position: absolute; 
+  top: 20%;
+  right: 10%;
+}
+#playlist h3{
+  margin-bottom: 15px;
+}
 
 /* CONTACT
 ==================================== */
@@ -225,7 +381,17 @@ body{
 
 /* MEDIA QUERIES
 ==================================== */
-
+@media(max-width: 1550px){
+  .text-box-1{
+    left: 5%;
+  }
+  .links{
+    left: 5%;
+  }
+  #playlist{
+    right: 5%;
+  }
+}
 @media(max-width: 1366px){
   #logo{
     top: 25px;
@@ -250,6 +416,47 @@ body{
   }
   .home-text-right{
     right: 25px;
+  }
+
+  .heading{
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+  .heading::after,
+  .heading::before{
+    width: 30px;
+    top: 10px;
+  }
+  .text-box{
+    width: 300px;
+  }
+  .text-box p{
+    font-size: 1rem;
+  }
+}
+@media(max-width: 1166px){
+  #about{
+    height: 900px;
+  }
+  #reading-list{
+    display: none;
+  }
+  .text-box{
+    left: 10%;
+  }
+  .links{
+    top: 55%;
+    left: 15%;
+  }
+  .text-box-1{
+    top: 15%;
+  }
+  .text-box-2{
+    top: 35%;
+  }
+  #playlist{
+    top: 15%;
+    right: 5%;
   }
 }
 @media(max-width: 768px){
@@ -277,5 +484,42 @@ body{
   }
   .pulse{
     display: none;
+  }
+
+  #about{
+    height: 1150px;
+  }
+  .text-box-1{
+    top: 5%;
+  }
+  .text-box-2{
+    top: 18%;
+  }
+  .links{
+    top: 33%;
+  }
+  #playlist{
+    top: 58%;
+  }
+  #playlist,
+  .links,
+  .text-box{
+    left: 30%;
+  }
+}
+@media(max-width: 550px){
+  #playlist,
+  .links,
+  .text-box{
+    width: 70%;
+    left: 15%;
+  }
+}
+@media(max-width: 420px){
+  #playlist{
+    left: 5%
+  }
+  #playlist h3{
+    transform: translateX(35px)
   }
 }
