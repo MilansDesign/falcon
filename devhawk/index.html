@@ -132,50 +132,49 @@
             <form action="" method="POST">
                 <div id="dropdown">
                     <select name="dropdown">
-                        <option value="sendmail">Talk about a project</option>
-                        <option value="sendmail">Say Hi!</option>
+                        <option value="sendmail" id="send-mail">Talk about a project</option>
+                        <option value="sendmail"id="say-hi">Say Hi!</option>
                     </select>
                 </div>
                     
-                <div class="element-1">
+                <div id="element-1">
                     <input type="text" name="name" required="" spellcheck="false" autocomplete="off">
                     <label>Name</label>
                     <div class="input-line"></div>
                 </div>
             
-                <div class="element-2">
+                <div id="element-2">
                     <input type="text" name="email" required="" spellcheck="false" autocomplete="off">
                     <label>Email address</label>
                     <div class="input-line"></div>
                 </div>
 
-                <div class="element-3">
+                <div id="element-3">
                     <input type="text" name="company" required="" spellcheck="false" autocomplete="off">
                     <label>Company / Organisation</label>
                     <div class="input-line"></div>
                 </div>
 
-                <div class="element-4">
+                <div id="element-4">
                     <h3 id="value-budget">fff</h3>
                     <label for="">Budget</label>
                     <input type="range" min="200" max="5000" value="1000" id="slider-budget" class="slider">
                 </div>
 
-                <div class="element-5">
+                <div id="element-5">
                     <h3 id="value-deadline">44</h3>
                     <label for="">Deadline</label>
                     <input type="range" min="1" max="12" value="5" id="slider-deadline" class="slider">
                 </div>
 
-                <div class="element-6">
+                <div id="element-6">
                     <textarea type="text" name="message" required="" spellcheck="false" autocomplete="off"></textarea>
-                    <label>Some details</label>
+                    <label>Message</label>
                     <div class="input-line"></div>
                 </div>
 
-                
-
                 <button type="submit" name="submit">send</button>
+                
             </form>
         </div>
 
@@ -185,7 +184,15 @@
     <!--     SCRIPTS
     =======================-->
     
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <script>
+
+    //Option
+        
+    //Slider
+
     var slider1=document.getElementById("slider-budget");
     var val1=document.getElementById("value-budget");
     val1.innerHTML="$" + slider1.value;
