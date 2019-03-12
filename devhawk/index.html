@@ -19,8 +19,12 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu|Cinzel" rel="stylesheet">
-    
-    <!-- Scripts -->
+
+    <!-- Particles -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- Links -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -128,13 +132,12 @@
     =======================-->
     <section id="contact">
 
-        <div id="contact-form">
-            <form action="" method="POST">
-                <div id="dropdown">
-                    <select name="dropdown">
-                        <option value="sendmail" id="send-mail">Talk about a project</option>
-                        <option value="sendmail"id="say-hi">Say Hi!</option>
-                    </select>
+        <div id="contact-form" class="form-big">
+            <form action="email.php" method="POST">
+
+                <div id="toggle">
+                    <h3 class="talk-project current">Talk Project</h3>
+                    <h3 class="say-hi">Say Hi</h3>
                 </div>
                     
                 <div id="element-1">
@@ -150,7 +153,7 @@
                 </div>
 
                 <div id="element-3">
-                    <input type="text" name="company" required="" spellcheck="false" autocomplete="off">
+                    <input type="text" name="company" required="" spellcheck="false" autocomplete="off" id="element-2-input">
                     <label>Company / Organisation</label>
                     <div class="input-line"></div>
                 </div>
@@ -158,13 +161,14 @@
                 <div id="element-4">
                     <h3 id="value-budget">fff</h3>
                     <label for="">Budget</label>
-                    <input type="range" min="200" max="5000" value="1000" id="slider-budget" class="slider">
+                    <input type="range" min="200" max="5000" value="1000" id="slider-budget" class="slider"
+                    name="budget">
                 </div>
 
                 <div id="element-5">
                     <h3 id="value-deadline">44</h3>
                     <label for="">Deadline</label>
-                    <input type="range" min="1" max="12" value="5" id="slider-deadline" class="slider">
+                    <input type="range" min="1" max="12" value="5" id="slider-deadline" class="slider" name="deadline">
                 </div>
 
                 <div id="element-6">
@@ -184,40 +188,12 @@
     <!--     SCRIPTS
     =======================-->
     
-    <!-- Jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <script>
-
-    //Option
-        
-    //Slider
-
-    var slider1=document.getElementById("slider-budget");
-    var val1=document.getElementById("value-budget");
-    val1.innerHTML="$" + slider1.value;
-    slider1.oninput=function(){
-        val1.innerHTML="$" + this.value;
-    }
-    var slider2=document.getElementById("slider-deadline");
-    var val2=document.getElementById("value-deadline");
-    val2.innerHTML=slider2.value + " months";
-    slider2.oninput=function(){
-        val2.innerHTML=this.value + " months";
-        if(this.value == 12){
-            val2.innerHTML="Not sure";
-        }
-        if(this.value == 1){
-            val2.innerHTML=this.value + " month";
-        }
-    }
-    </script>
-
     <!-- Flower -->
     <script src="js/flower.js"></script>
+    
+    <!-- Main Script -->
+    <script async src="js/main.js"></script>
 
-    <!-- Particles -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
         particlesJS.load('particles-js',
         'particles.json', function(){

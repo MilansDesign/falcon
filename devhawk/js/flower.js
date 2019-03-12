@@ -1,5 +1,3 @@
-console.clear();
-
 var screen_width = window.innerWidth;
 if(screen_width > 768) {
 
@@ -92,10 +90,6 @@ if(screen_width > 768) {
         newBox.appendChild( newShape );
     
         return newBox;
-    }
-    
-    function out ( content ) {
-        console.log( content );
     }
 
 }
